@@ -1,0 +1,72 @@
+<?xml version="1.0.2" encoding="utf-8"?>
+<install type="module" version="1.5.0">
+    <name>LaunchTulsa.com MooSlider 1.0.2</name>
+    <author>LaunchTulsa.com</author>
+	<creationDate>December 2008</creationDate>
+	<copyright>Released under GNU/GPL License</copyright>
+	<license>http://www.gnu.org/licenses/gpl-3.0-standalone.html</license>
+	<license>GNU GPL</license>
+    <version>1.0.2</version>
+	<authorEmail>info@launchtulsa.com</authorEmail>
+	<authorUrl>www.launchtulsa.com</authorUrl>
+    <description>Mooslider Displays any module in a slider - submit bugs at LaunchTulsa.com</description>
+	
+	
+	<files>
+  		
+	<filename module="mod_mooslider">mod_mooslider.php</filename>
+        <filename>mod_mooslider.xml</filename>
+        <filename>index.html</filename>
+        <filename>tmpl/default.php</filename>
+        <filename>tmpl/index.html</filename>
+		<filename>lt_mooslider/lt_mooslider.js</filename>
+		<filename>lt_mooslider/mootools-1.2-core.js</filename>
+		<filename>lt_mooslider/index.html</filename>
+		<filename>lt_mooslider/right.png</filename>
+		<filename>lt_mooslider/left.png</filename>
+	</files>
+	
+    <params>
+	<param type="spacer" />
+	<param type="spacer" default="MooSlider Width and Height" />
+	<param name="mooslider_wrap_width" type="text" default="600px" label="MooSlider Width" description="MooSlider Container" />
+	<param name="mooslider_width" type="text" default="550px" label="Width of Sliders" description="Width of MooSlider" />
+	<param name="mooslider_sliderwidth" type="text" default="550" label="Width of Sliders - without px" description="Value must be the same as above without px or % added" />	
+	<param name="mooslider_height" type="text" default="200px" label="Height" description="Height of mooslider" />
+	<param type="spacer" />
+	<param type="spacer" default="Slider Options" />
+	<param name="mooslider_autoplay" type="list" default="autoPlay: true" label="Auto Play" description="Enable/Disable">
+    			<option value="autoPlay: false">No</option>
+    			<option value="autoPlay: true">Yes</option>
+    </param>
+	<param type="spacer" />
+	<param type="spacer" default="Include Mootools Enable/Disable" />
+	<param name="mooslider_mootools" type="list" default="1" label="Load Mootools" description="Enable/Disable">
+    			<option value="0">No</option>
+    			<option value="1">Yes</option>
+    </param>
+    <param type="spacer" />
+    <param type="spacer" default="MooSlider Speed" />
+    <param name="mooslider_speed" type="text" default="6000" label="Speed" description="Speed of mooslider" />
+
+	<param type="spacer" />
+	<param type="spacer" default="Module Positions Within MooSlider" />
+	<param name="mooslider_pos1" type="text" default="mooslider1" label="1st slide" description="Module to use in the 1st slide" />	
+	<param name="mooslider_pos2" type="text" default="mooslider2" label="2nd slide" description="Module to use in the 2nd slide" />
+	<param name="mooslider_pos3" type="text" default="mooslider3" label="3rd slide" description="Module to use in the 3rd slide" />	
+	<param name="mooslider_pos4" type="text" default="mooslider4" label="4th slide" description="Module to use in the 4th slide" />	
+	<param name="mooslider_pos5" type="text" default="mooslider5" label="5th slide" description="Module to use in the 5th slide" />	
+	<param name="mooslider_pos6" type="text" default="mooslider6" label="6th slide" description="Module to use in the 6th slide" />	
+	
+	<param type="spacer" />
+	<param type="spacer" default="Copyright / License To Use" />
+	<param name="mooslider_link" type="list" default="1" label="Enable Link Under Slider" description="Enable/Disable">
+    			<option value="0">No</option>
+    			<option value="1">Yes</option>
+    </param>	
+
+	<param type="spacer" default="If set to NO, a link in the footer is required. Copy/paste this code into your footer:" />
+	<param name="test" type="textarea" default="&lt;a href=&quot;http://launchtulsa.com&quot; title=&quot;LaunchTulsa.com&quot;&gt;LaunchTulsa.com&lt;/a&gt;" description="Enable/Disable" label="Copy/Paste Into Footer" rows="10" cols="60" />
+	
+	</params>
+</install>
