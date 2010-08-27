@@ -1,4 +1,4 @@
-<?php // no direct access
+<?php
 /**
  * 
  * MooSlider is a free software: you can redistribute it and/or modify it under the terms
@@ -18,6 +18,7 @@
  *@link http://launchtulsa.com Official website
 **/
 
+// no direct access
 defined( '_JEXEC' ) or die( 'Restricted access' );
 
 $doc =& JFactory::getDocument();
@@ -44,7 +45,7 @@ if ($mooslider_mootools == "1") {
 $doc->addScript('modules/mod_mooslider/lt_mooslider/lt_mooslider.js');
 
 $mooscript = "window.addEvent('domready',function(){
-									
+
 		var lt_mooslider_handles_more = $$('#lt_mooslider_handles_more span');
 		var nS8 = new noobSlide({
 			box: $('lt_moosliders'),
@@ -71,61 +72,65 @@ $doc->addScriptDeclaration( $mooscript );
 <div id="lt_mooslider_wrap">
 
 	<span id="lt_mooslider_prev">
-    <img src="<?php echo JURI::base();?>modules/mod_mooslider/lt_mooslider/left.png" alt="Prev" width="40" height="40" />
+		<img src="<?php echo JURI::base();?>modules/mod_mooslider/lt_mooslider/left.png" alt="Prev" width="40" height="40" />
     </span>
     <span id="lt_mooslider_next">
-    <img src="<?php echo JURI::base();?>modules/mod_mooslider/lt_mooslider/right.png" alt="Next" width="40" height="40" />
+		<img src="<?php echo JURI::base();?>modules/mod_mooslider/lt_mooslider/right.png" alt="Next" width="40" height="40" />
     </span> 
  
 	<div class="lt_mooslider_container"> 
 		<div id="lt_moosliders"> 
         
-			<?php 
-			
-			jimport('joomla.application.module.helper');
+<?php 
+jimport('joomla.application.module.helper');
 
-			$mooslidermod =& JModuleHelper::getModules($mooslider_pos1);
-			foreach ($mooslidermod as $display)
-			{ $mooslider_attribs['style'] = 'xhtml';
-			echo JModuleHelper::renderModule($display, $mooslider_attribs);
-			} 
-		
-			$mooslidermod =& JModuleHelper::getModules($mooslider_pos2);
-			foreach ($mooslidermod as $display)
-			{ $mooslider_attribs['style'] = 'xhtml';
-			echo JModuleHelper::renderModule($display, $mooslider_attribs);
-			} 
-			
-			$mooslidermod =& JModuleHelper::getModules($mooslider_pos3);
-			foreach ($mooslidermod as $display)
-			{ $mooslider_attribs['style'] = 'xhtml';
-			echo JModuleHelper::renderModule($display, $mooslider_attribs);
-			} 
-			
-			$mooslidermod =& JModuleHelper::getModules($mooslider_pos4);
-			foreach ($mooslidermod as $display)
-			{ $mooslider_attribs['style'] = 'xhtml';
-			echo JModuleHelper::renderModule($display, $mooslider_attribs);
-			} 
-			
-			$mooslidermod =& JModuleHelper::getModules($mooslider_pos5);
-			foreach ($mooslidermod as $display)
-			{ $mooslider_attribs['style'] = 'xhtml';
-			echo JModuleHelper::renderModule($display, $mooslider_attribs);
-			} 
-			
-			$mooslidermod =& JModuleHelper::getModules($mooslider_pos6);
-			foreach ($mooslidermod as $display)
-			{ $mooslider_attribs['style'] = 'xhtml';
-			echo JModuleHelper::renderModule($display, $mooslider_attribs);
-			} 
-			
-			?>
+$mooslidermod =& JModuleHelper::getModules($mooslider_pos1);
+foreach ($mooslidermod as $display)
+{
+	$mooslider_attribs['style'] = 'xhtml';
+	echo JModuleHelper::renderModule($display, $mooslider_attribs);
+} 
+
+$mooslidermod =& JModuleHelper::getModules($mooslider_pos2);
+foreach ($mooslidermod as $display)
+{
+	$mooslider_attribs['style'] = 'xhtml';
+	echo JModuleHelper::renderModule($display, $mooslider_attribs);
+} 
+
+$mooslidermod =& JModuleHelper::getModules($mooslider_pos3);
+foreach ($mooslidermod as $display)
+{
+	$mooslider_attribs['style'] = 'xhtml';
+	echo JModuleHelper::renderModule($display, $mooslider_attribs);
+} 
+
+$mooslidermod =& JModuleHelper::getModules($mooslider_pos4);
+foreach ($mooslidermod as $display)
+{
+	$mooslider_attribs['style'] = 'xhtml';
+	echo JModuleHelper::renderModule($display, $mooslider_attribs);
+} 
+
+$mooslidermod =& JModuleHelper::getModules($mooslider_pos5);
+foreach ($mooslidermod as $display)
+{
+	$mooslider_attribs['style'] = 'xhtml';
+	echo JModuleHelper::renderModule($display, $mooslider_attribs);
+} 
+
+$mooslidermod =& JModuleHelper::getModules($mooslider_pos6);
+foreach ($mooslidermod as $display)
+{
+	$mooslider_attribs['style'] = 'xhtml';
+	echo JModuleHelper::renderModule($display, $mooslider_attribs);
+} 
+
+?>
             
 		</div> 
 	</div> 
- 
-	
+ 	
  	<p class="buttons" id="lt_mooslider_handles"> 
 		<span>Pane 1</span> 
 		<span>Pane 2</span> 
@@ -144,12 +149,12 @@ $doc->addScriptDeclaration( $mooscript );
 		<span>3</span> 
 		<span>4</span> 
 	</p> 
-    
 
 <?php 
-if ($mooslider_link == "1") {
+if ($mooslider_link == "1")
+{
 	echo "<span class='lt_link'><a href='http://launchtulsa.com'>LaunchTulsa.com</a></span>";
-	}
+}
 	
 ?>
 
