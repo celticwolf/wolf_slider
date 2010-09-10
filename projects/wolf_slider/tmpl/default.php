@@ -49,7 +49,7 @@ $mooscript = "window.addEvent('domready',function(){
 		var lt_mooslider_handles_more = $$('#lt_mooslider_handles_more span');
 		var nS8 = new noobSlide({
 			box: $('lt_moosliders'),
-			items: $$('#lt_moosliders div'),
+			items: $$('#lt_moosliders > div'),
 			size: $mooslider_sliderwidth,
 			$mooslider_autoplay,
 			interval: $mooslider_speed,
