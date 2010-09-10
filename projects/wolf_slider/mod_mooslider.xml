@@ -32,6 +32,11 @@
 		<param name="mooslider_width" type="text" default="550px" label="Width of Sliders" description="Width of MooSlider" />
 		<param name="mooslider_sliderwidth" type="text" default="550" label="Width of Sliders - without px" description="Value must be the same as above without px or % added" />	
 		<param name="mooslider_height" type="text" default="200px" label="Height" description="Height of mooslider" />
+		<param name="mooslider_effect" type="list" default="1" label="Effect" description="Choose the effect to be used when transitioning between slides">
+			<option value="horizontal">Horizontal Slide</option>
+			<option value="vertical">Vertical Slide</option>
+			<option value="fade">Fade</option>
+		</param>
 
 		<param type="spacer" />
 		<param type="spacer" default="Slider Options" />

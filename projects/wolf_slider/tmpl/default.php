@@ -50,7 +50,7 @@ $mooscript = "window.addEvent('domready',function(){
 		var nS8 = new noobSlide({
 			box: $('lt_moosliders'),
 			items: $$('#lt_moosliders > div'),
-			fade: true,
+			fade: $mooslider_fade,
 			size: $mooslider_sliderwidth,
 			$mooslider_autoplay,
 			interval: $mooslider_speed,

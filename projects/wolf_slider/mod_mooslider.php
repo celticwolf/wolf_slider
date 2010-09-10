@@ -22,9 +22,10 @@
 defined( "_JEXEC" ) or die( "Restricted access" );
 
 $mooslider_wrap_width	= $params->get( "mooslider_wrap_width", "600px");
-$mooslider_width  		= $params->get( "mooslider_width", "550px");
+$mooslider_width		= $params->get( "mooslider_width", "550px");
 $mooslider_sliderwidth	= $params->get( "mooslider_sliderwidth", "550");
-$mooslider_height 		= $params->get( "mooslider_height", "200px");
+$mooslider_height		= $params->get( "mooslider_height", "200px");
+$mooslider_effect		= $params->get( "mooslider_effect", "horizontal");
 $mooslider_mootools		= $params->get( "mooslider_mootools", 1) ;
 $mooslider_pos1			= $params->get( "mooslider_pos1", "user1"); // Module to use in the 1st slide
 $mooslider_pos2			= $params->get( "mooslider_pos2", "user2"); // Module to use in the 1st slide
@@ -33,8 +34,13 @@ $mooslider_pos4			= $params->get( "mooslider_pos4", "user4"); // Module to use i
 $mooslider_pos5			= $params->get( "mooslider_pos5", "user5"); // Module to use in the 1st slide
 $mooslider_pos6			= $params->get( "mooslider_pos6", "user6"); // Module to use in the 1st slide
 $mooslider_autoplay		= $params->get( "mooslider_autoplay", "autoPlay: true") ;
-$mooslider_speed 		= $params->get( "mooslider_speed", "6000");
-$mooslider_link 		= $params->get( "mooslider_link", 1);
+$mooslider_speed		= $params->get( "mooslider_speed", "6000");
+$mooslider_link			= $params->get( "mooslider_link", 1);
+
+// The fade effect is a separate parameter to the JavaScript function, but makes more sense
+// from the user's perspective if it's combined with the horizontal vs. vertical sliding.
+// To accommodate the user, we split it into a separate variable here.
+$mooslider_fade = (0 === strcasecmp($mooslider_effect, 'fade')) ? 'true' : 'false';
 
 require( JModuleHelper::getLayoutPath( "mod_mooslider" ) );
 
