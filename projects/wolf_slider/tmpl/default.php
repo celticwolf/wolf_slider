@@ -24,22 +24,25 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 $doc =& JFactory::getDocument();
 $lt_moostyle = "
 #lt_mooslider_wrap {width: $mooslider_wrap_width; text-align:left; margin-right: auto; margin-left: auto;}
-#lt_mooslider_wrap .buttons{text-align:center;clear:both;display: none;visibility: hidden;}
+#lt_mooslider_wrap .buttons { text-align: center; clear: both; display: block; margin-top: 0.5em; }
 .lt_mooslider_container{position:relative; width: $mooslider_width; height: $mooslider_height; overflow:hidden; margin-left: 40px;}
 #lt_moosliders {position:absolute; z-index: 20;}
 #lt_moosliders div{width: $mooslider_width;	float:left;}
 #lt_mooslider_next {position:relative; float: right; z-index: 99; display: block; margin-top: 70px; margin-left: 10px; }
 #lt_mooslider_prev {position:relative; float: left; z-index: 99; display: block; margin-top: 70px; margin-right: 10px; }
 .lt_link {font-size: 0.6em; }
+.buttons#lt_mooslider_handles { display: none; visibility: hidden; }
+.buttons#lt_mooslider_handles_more { display: none; visibility: hidden; }
+#lt_mooslider_playback { display: none; visibility: hidden; }
 ";
 $doc->addStyleDeclaration( $lt_moostyle );
 
 if ($mooslider_mootools == "1") {
 	JHTML::_('behavior.mootools');
-  	$headerstuff=$doc->getHeadData();
-  	$key = JURI::base( true ) . '/media/system/js/mootools.js';
-  	unset( $headerstuff['scripts'][$key] );
-  	$doc->setHeadData($headerstuff);
+	$headerstuff=$doc->getHeadData();
+	$key = JURI::base( true ) . '/media/system/js/mootools.js';
+	unset( $headerstuff['scripts'][$key] );
+	$doc->setHeadData($headerstuff);
 	$doc->addScript('modules/mod_mooslider/lt_mooslider/mootools-1.2-core.js');
 }
 $doc->addScript('modules/mod_mooslider/lt_mooslider/lt_mooslider.js');
@@ -73,11 +76,11 @@ $doc->addScriptDeclaration( $mooscript );
 <div id="lt_mooslider_wrap">
 
 	<span id="lt_mooslider_prev">
-		<img src="<?php echo JURI::base();?>modules/mod_mooslider/lt_mooslider/left.png" alt="Prev" width="40" height="40" />
-    </span>
-    <span id="lt_mooslider_next">
-		<img src="<?php echo JURI::base();?>modules/mod_mooslider/lt_mooslider/right.png" alt="Next" width="40" height="40" />
-    </span> 
+		<img src="<?php echo JURI::base();?>modules/mod_mooslider/lt_mooslider/previous.png" alt="Prev" width="40" height="40" />
+	</span>
+	<span id="lt_mooslider_next">
+		<img src="<?php echo JURI::base();?>modules/mod_mooslider/lt_mooslider/next.png" alt="Next" width="40" height="40" />
+	</span> 
  
 	<div class="lt_mooslider_container"> 
 		<div id="lt_moosliders"> 
@@ -128,20 +131,24 @@ foreach ($mooslidermod as $display)
 } 
 
 ?>
-            
+
 		</div> 
 	</div> 
- 	
- 	<p class="buttons" id="lt_mooslider_handles"> 
-		<span>Pane 1</span> 
-		<span>Pane 2</span> 
-		<span>Pane 3</span> 
-		<span>Pane 4</span> 
+	
+	<p class="buttons" id="lt_mooslider_handles">
+		<span>Pane 1</span>
+		<span>Pane 2</span>
+		<span>Pane 3</span>
+		<span>Pane 4</span>
 	</p>
-	<p class="buttons"> 
-		<span id="lt_mooslider_playback">&lt;Playback</span> 
-		<span id="lt_mooslider_stop">Stop</span> 
-		<span id="lt_mooslider_play">Play &gt;</span> 
+	<p class="buttons">
+		<span id="lt_mooslider_playback">&lt;Playback</span>
+		<span id="lt_mooslider_stop">
+			<img src="<?php echo JURI::base();?>modules/mod_mooslider/lt_mooslider/pause.png" alt="play" width="40" height="40" />
+		</span>
+		<span id="lt_mooslider_play">
+			<img src="<?php echo JURI::base();?>modules/mod_mooslider/lt_mooslider/play.png" alt="play" width="40" height="40" />
+		</span>
 	</p> 
  
 	<p class="buttons" id="lt_mooslider_handles_more"> 
