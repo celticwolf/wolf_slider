@@ -14,8 +14,11 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  *@author LaunchTulsa.com
- *@copyright (C) 2008 LaunchTulsa.com
+ *@copyright (C) 2008 LaunchTulsa.com, 2010 Celtic Wolf, Inc.
  *@link http://launchtulsa.com Official website
+ *
+ * Portions copyright 2010 Celtic Wolf, Inc.
+ * http://www.celticwolf.com/
 **/
 
 // no direct access
