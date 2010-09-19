@@ -26,111 +26,111 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 
 $doc =& JFactory::getDocument();
 $lt_moostyle = "
-#lt_mooslider_wrap {width: $mooslider_wrap_width; text-align:left; margin-right: auto; margin-left: auto;}
-#lt_mooslider_wrap .buttons { text-align: center; clear: both; display: block; margin-top: 0.5em; }
-.lt_mooslider_container{position:relative; width: $mooslider_width; height: $mooslider_height; overflow:hidden; margin-left: 40px;}
-#lt_moosliders {position:absolute; z-index: 20;}
-#lt_moosliders div{width: $mooslider_width;	float:left;}
-#lt_mooslider_next {position:relative; float: right; z-index: 99; display: block; margin-top: 70px; margin-left: 10px; }
-#lt_mooslider_prev {position:relative; float: left; z-index: 99; display: block; margin-top: 70px; margin-right: 10px; }
+#lt_wolfslider_wrap {width: $wolfslider_wrap_width; text-align:left; margin-right: auto; margin-left: auto;}
+#lt_wolfslider_wrap .buttons { text-align: center; clear: both; display: block; margin-top: 0.5em; }
+.lt_wolfslider_container{position:relative; width: $wolfslider_width; height: $wolfslider_height; overflow:hidden; margin-left: 40px;}
+#lt_wolfsliders {position:absolute; z-index: 20;}
+#lt_wolfsliders div{width: $wolfslider_width;	float:left;}
+#lt_wolfslider_next {position:relative; float: right; z-index: 99; display: block; margin-top: 70px; margin-left: 10px; }
+#lt_wolfslider_prev {position:relative; float: left; z-index: 99; display: block; margin-top: 70px; margin-right: 10px; }
 .lt_link {font-size: 0.6em; }
-.buttons#lt_mooslider_handles { display: none; visibility: hidden; }
-.buttons#lt_mooslider_handles_more { display: none; visibility: hidden; }
-#lt_mooslider_playback { display: none; visibility: hidden; }
+.buttons#lt_wolfslider_handles { display: none; visibility: hidden; }
+.buttons#lt_wolfslider_handles_more { display: none; visibility: hidden; }
+#lt_wolfslider_playback { display: none; visibility: hidden; }
 ";
 $doc->addStyleDeclaration( $lt_moostyle );
 
-if ($mooslider_mootools == "1") {
+if ($wolfslider_mootools == "1") {
 	JHTML::_('behavior.mootools');
 	$headerstuff=$doc->getHeadData();
 	$key = JURI::base( true ) . '/media/system/js/mootools.js';
 	unset( $headerstuff['scripts'][$key] );
 	$doc->setHeadData($headerstuff);
-	$doc->addScript('modules/mod_mooslider/lt_mooslider/mootools-1.2-core.js');
+	$doc->addScript('modules/mod_wolfslider/lt_wolfslider/mootools-1.2-core.js');
 }
-$doc->addScript('modules/mod_mooslider/lt_mooslider/lt_mooslider.js');
+$doc->addScript('modules/mod_wolfslider/lt_wolfslider/lt_wolfslider.js');
 
 $mooscript = "window.addEvent('domready',function(){
 
-		var lt_mooslider_handles_more = $$('#lt_mooslider_handles_more span');
+		var lt_wolfslider_handles_more = $$('#lt_wolfslider_handles_more span');
 		var nS8 = new noobSlide({
-			box: $('lt_moosliders'),
-			items: $$('#lt_moosliders > div'),
-			fade: $mooslider_fade,
-			size: $mooslider_sliderwidth,
-			$mooslider_autoplay,
-			interval: $mooslider_speed,
-			handles: $$('#lt_mooslider_handles span'),
-			addButtons: {previous: $('lt_mooslider_prev'), play: $('lt_mooslider_play'), stop: $('lt_mooslider_stop'), playback: $('lt_mooslider_playback'), next: $('lt_mooslider_next') },
+			box: $('lt_wolfsliders'),
+			items: $$('#lt_wolfsliders > div'),
+			fade: $wolfslider_fade,
+			size: $wolfslider_sliderwidth,
+			$wolfslider_autoplay,
+			interval: $wolfslider_speed,
+			handles: $$('#lt_wolfslider_handles span'),
+			addButtons: {previous: $('lt_wolfslider_prev'), play: $('lt_wolfslider_play'), stop: $('lt_wolfslider_stop'), playback: $('lt_wolfslider_playback'), next: $('lt_wolfslider_next') },
 			onWalk: function(currentItem,currentHandle){
 
-				$$(this.handles,lt_mooslider_handles_more).removeClass('active');
-				$$(currentHandle,lt_mooslider_handles_more[this.currentIndex]).addClass('active');
+				$$(this.handles,lt_wolfslider_handles_more).removeClass('active');
+				$$(currentHandle,lt_wolfslider_handles_more[this.currentIndex]).addClass('active');
 			}
 		});
-		nS8.addActionButtons('previous',$$('#lt_moosliders .prev'));
-		nS8.addActionButtons('next',$$('#lt_moosliders .next'));
-		nS8.addHandleButtons(lt_mooslider_handles_more);
+		nS8.addActionButtons('previous',$$('#lt_wolfsliders .prev'));
+		nS8.addActionButtons('next',$$('#lt_wolfsliders .next'));
+		nS8.addHandleButtons(lt_wolfslider_handles_more);
 		nS8.walk(0,false,true);
  
 	});";
 $doc->addScriptDeclaration( $mooscript );
 ?>
-<div id="lt_mooslider_wrap">
+<div id="lt_wolfslider_wrap">
 
-	<span id="lt_mooslider_prev">
-		<img src="<?php echo JURI::base();?>modules/mod_mooslider/lt_mooslider/previous.png" alt="Prev" width="40" height="40" />
+	<span id="lt_wolfslider_prev">
+		<img src="<?php echo JURI::base();?>modules/mod_wolfslider/lt_wolfslider/previous.png" alt="Prev" width="40" height="40" />
 	</span>
-	<span id="lt_mooslider_next">
-		<img src="<?php echo JURI::base();?>modules/mod_mooslider/lt_mooslider/next.png" alt="Next" width="40" height="40" />
+	<span id="lt_wolfslider_next">
+		<img src="<?php echo JURI::base();?>modules/mod_wolfslider/lt_wolfslider/next.png" alt="Next" width="40" height="40" />
 	</span> 
  
-	<div class="lt_mooslider_container"> 
-		<div id="lt_moosliders"> 
+	<div class="lt_wolfslider_container"> 
+		<div id="lt_wolfsliders"> 
         
 <?php 
 jimport('joomla.application.module.helper');
 
-$mooslidermod =& JModuleHelper::getModules($mooslider_pos1);
-foreach ($mooslidermod as $display)
+$wolfslidermod =& JModuleHelper::getModules($wolfslider_pos1);
+foreach ($wolfslidermod as $display)
 {
-	$mooslider_attribs['style'] = 'xhtml';
-	echo JModuleHelper::renderModule($display, $mooslider_attribs);
+	$wolfslider_attribs['style'] = 'xhtml';
+	echo JModuleHelper::renderModule($display, $wolfslider_attribs);
 } 
 
-$mooslidermod =& JModuleHelper::getModules($mooslider_pos2);
-foreach ($mooslidermod as $display)
+$wolfslidermod =& JModuleHelper::getModules($wolfslider_pos2);
+foreach ($wolfslidermod as $display)
 {
-	$mooslider_attribs['style'] = 'xhtml';
-	echo JModuleHelper::renderModule($display, $mooslider_attribs);
+	$wolfslider_attribs['style'] = 'xhtml';
+	echo JModuleHelper::renderModule($display, $wolfslider_attribs);
 } 
 
-$mooslidermod =& JModuleHelper::getModules($mooslider_pos3);
-foreach ($mooslidermod as $display)
+$wolfslidermod =& JModuleHelper::getModules($wolfslider_pos3);
+foreach ($wolfslidermod as $display)
 {
-	$mooslider_attribs['style'] = 'xhtml';
-	echo JModuleHelper::renderModule($display, $mooslider_attribs);
+	$wolfslider_attribs['style'] = 'xhtml';
+	echo JModuleHelper::renderModule($display, $wolfslider_attribs);
 } 
 
-$mooslidermod =& JModuleHelper::getModules($mooslider_pos4);
-foreach ($mooslidermod as $display)
+$wolfslidermod =& JModuleHelper::getModules($wolfslider_pos4);
+foreach ($wolfslidermod as $display)
 {
-	$mooslider_attribs['style'] = 'xhtml';
-	echo JModuleHelper::renderModule($display, $mooslider_attribs);
+	$wolfslider_attribs['style'] = 'xhtml';
+	echo JModuleHelper::renderModule($display, $wolfslider_attribs);
 } 
 
-$mooslidermod =& JModuleHelper::getModules($mooslider_pos5);
-foreach ($mooslidermod as $display)
+$wolfslidermod =& JModuleHelper::getModules($wolfslider_pos5);
+foreach ($wolfslidermod as $display)
 {
-	$mooslider_attribs['style'] = 'xhtml';
-	echo JModuleHelper::renderModule($display, $mooslider_attribs);
+	$wolfslider_attribs['style'] = 'xhtml';
+	echo JModuleHelper::renderModule($display, $wolfslider_attribs);
 } 
 
-$mooslidermod =& JModuleHelper::getModules($mooslider_pos6);
-foreach ($mooslidermod as $display)
+$wolfslidermod =& JModuleHelper::getModules($wolfslider_pos6);
+foreach ($wolfslidermod as $display)
 {
-	$mooslider_attribs['style'] = 'xhtml';
-	echo JModuleHelper::renderModule($display, $mooslider_attribs);
+	$wolfslider_attribs['style'] = 'xhtml';
+	echo JModuleHelper::renderModule($display, $wolfslider_attribs);
 } 
 
 ?>
@@ -138,23 +138,23 @@ foreach ($mooslidermod as $display)
 		</div> 
 	</div> 
 	
-	<p class="buttons" id="lt_mooslider_handles">
+	<p class="buttons" id="lt_wolfslider_handles">
 		<span>Pane 1</span>
 		<span>Pane 2</span>
 		<span>Pane 3</span>
 		<span>Pane 4</span>
 	</p>
 	<p class="buttons">
-		<span id="lt_mooslider_playback">&lt;Playback</span>
-		<span id="lt_mooslider_stop">
-			<img src="<?php echo JURI::base();?>modules/mod_mooslider/lt_mooslider/pause.png" alt="play" width="40" height="40" />
+		<span id="lt_wolfslider_playback">&lt;Playback</span>
+		<span id="lt_wolfslider_stop">
+			<img src="<?php echo JURI::base();?>modules/mod_wolfslider/lt_wolfslider/pause.png" alt="play" width="40" height="40" />
 		</span>
-		<span id="lt_mooslider_play">
-			<img src="<?php echo JURI::base();?>modules/mod_mooslider/lt_mooslider/play.png" alt="play" width="40" height="40" />
+		<span id="lt_wolfslider_play">
+			<img src="<?php echo JURI::base();?>modules/mod_wolfslider/lt_wolfslider/play.png" alt="play" width="40" height="40" />
 		</span>
 	</p> 
  
-	<p class="buttons" id="lt_mooslider_handles_more"> 
+	<p class="buttons" id="lt_wolfslider_handles_more"> 
 		<span>1</span> 
 		<span>2</span> 
 		<span>3</span> 
@@ -162,7 +162,7 @@ foreach ($mooslidermod as $display)
 	</p> 
 
 <?php 
-if ($mooslider_link == "1")
+if ($wolfslider_link == "1")
 {
 	echo "<span class='lt_link'><a href='http://launchtulsa.com'>LaunchTulsa.com</a></span>";
 }
