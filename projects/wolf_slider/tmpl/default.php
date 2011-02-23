@@ -51,8 +51,9 @@ if ($wolfslider_mootools)
 }
 $doc->addScript('modules/mod_wolfslider/lt_wolfslider/lt_wolfslider.js');
 
-$mooscript = "window.addEvent('domready',function(){
-		var lt_wolfslider_handles_more = $$('#lt_wolfslider_handles_more span');
+$mooscript = "
+	window.addEvent('domready',function(){
+		var slide_picker = $$('$slide_picker_selector');
 		var nS8 = new noobSlide({
 			box: $('lt_wolfsliders'),
 			items: $$('#lt_wolfsliders > div'),
@@ -60,23 +61,38 @@ $mooscript = "window.addEvent('domready',function(){
 			size: $wolfslider_width_nopx,
 			autoplay: $wolfslider_autoplay,
 			interval: $wolfslider_speed,
-			handles: $$('#lt_wolfslider_handles span'),
+			handles: slide_picker,
 			addButtons: {previous: $('lt_wolfslider_prev'), play: $('lt_wolfslider_play'), stop: $('lt_wolfslider_stop'), playback: $('lt_wolfslider_playback'), next: $('lt_wolfslider_next') },
-			onWalk: function(currentItem,currentHandle){
-
-				$$(this.handles,lt_wolfslider_handles_more).removeClass('active');
-				$$(currentHandle,lt_wolfslider_handles_more[this.currentIndex]).addClass('active');
+			onWalk: function(currentItem, currentHandle)
+			{
+				$$(this.handles, slide_picker).removeClass('active');
+				$$(currentHandle, slide_picker[this.currentIndex]).addClass('active');
 			}
 		});
-		nS8.addActionButtons('previous',$$('#lt_wolfsliders .prev'));
-		nS8.addActionButtons('next',$$('#lt_wolfsliders .next'));
-		nS8.addHandleButtons(lt_wolfslider_handles_more);
-		nS8.walk(0,false,true);
+		nS8.addActionButtons('previous', $$('#lt_wolfsliders .prev'));
+		nS8.addActionButtons('next', $$('#lt_wolfsliders .next'));
+		//nS8.addHandleButtons(slide_picker);
+		nS8.walk(0, false, true);
 	});";
 $doc->addScriptDeclaration( $mooscript );
+
 ?>
 <div id="lt_wolfslider_wrap">
 
+<?php
+// If the configuration specifies that we're going to use a slide picker module
+if ($use_slide_picker)
+{
+	echo "<div id=\"wolfslider_slide_picker_wrapper\">\n";
+	$slide_picker_mod =& JModuleHelper::getModules($slide_picker_pos);
+	foreach ($slide_picker_mod as $picker)
+	{
+		$slide_picker_attribs['style'] = 'xhtml';
+		echo JModuleHelper::renderModule($picker, $slide_picker_attribs);
+	}
+	echo "</div>\n";
+}
+?>
 	<span id="lt_wolfslider_prev">
 		<img src="<?php echo JURI::base();?>modules/mod_wolfslider/lt_wolfslider/previous.png" alt="Prev" width="40" height="40" />
 	</span>
