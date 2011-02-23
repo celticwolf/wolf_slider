@@ -35,6 +35,7 @@ $wolfslider_autoplay	= $params->get('wolfslider_autoplay', 'true') ;
 $wolfslider_speed		= intval($params->get('wolfslider_speed', '6000'));
 $use_slide_picker		= intval($params->get('use_slide_picker', '0')) === 1;
 $slide_picker_pos		= $params->get('slide_picker_pos', 'slide_picker1');
+$slide_picker_selector	= $params->get('slide_picker_selector', '#lt_wolfslider_handles_more span');
 
 // The fade effect is a separate parameter to the JavaScript function, but makes more sense
 // from the user's perspective if it's combined with the horizontal vs. vertical sliding.
