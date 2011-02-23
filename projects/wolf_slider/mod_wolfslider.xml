@@ -31,22 +31,28 @@
 		<param name="wolfslider_wrap_width" type="text" default="600" label="WolfSlider Width (in px)" description="WolfSlider Container" />
 		<param name="wolfslider_width" type="text" default="550" label="Width of Slides (in px)" description="Width of WolfSlider" />
 		<param name="wolfslider_height" type="text" default="200" label="Height (in px)" description="Height of WolfSlider" />
+		<param type="spacer" />
+		<param type="spacer" default="Modules to Use" />
+		<param name="wolfslider_pos" type="text" default="wolfslider1" label="Use modules in this position as slides" description="Name of position assigned to modules for slideshow" />	
+		<param name="use_slide_picker" type="radio" default="0" label="Use a slide picker?" description="Use a series of numbers or links to directly go to specific slides">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+		<param name="slide_picker_pos" type="text" default="slide_picker1" label="Use module in this position as slide picker" description="Name of position assigned to module that contains slide picker" />
+
+		<param type="spacer" />
+		<param type="spacer" default="Slider Options" />
+		<param name="wolfslider_autoplay" type="list" default="autoPlay: true" label="Auto Play" description="Enable/Disable">
+			<option value="false">No</option>
+			<option value="true">Yes</option>
+		</param>
 		<param name="wolfslider_effect" type="list" default="1" label="Effect" description="Choose the effect to be used when transitioning between slides">
 			<option value="horizontal">Horizontal Slide</option>
 			<option value="vertical">Vertical Slide</option>
 			<option value="fade">Fade</option>
 		</param>
+		<param name="wolfslider_speed" type="text" default="6000" label="Speed (in milliseconds)" description="Speed of WolfSlider" />
 
-		<param type="spacer" />
-		<param type="spacer" default="Module Positions Within WolfSlider" />
-		<param name="wolfslider_pos" type="text" default="wolfslider1" label="Position of Slide Modules" description="Name of position assigned to modules for slideshow" />	
-
-		<param type="spacer" />
-		<param type="spacer" default="Slider Options" />
-		<param name="wolfslider_autoplay" type="list" default="autoPlay: true" label="Auto Play" description="Enable/Disable">
-			<option value="autoPlay: false">No</option>
-			<option value="autoPlay: true">Yes</option>
-		</param>
 
 		<param type="spacer" />
 		<param type="spacer" default="Include Mootools Enable/Disable" />
@@ -54,9 +60,6 @@
 			<option value="0">No</option>
 			<option value="1">Yes</option>
 		</param>
-		<param type="spacer" />
-		<param type="spacer" default="WolfSlider Speed" />
-		<param name="wolfslider_speed" type="text" default="6000" label="Speed (in milliseconds)" description="Speed of WolfSlider" />
 
 	</params>
 </install>

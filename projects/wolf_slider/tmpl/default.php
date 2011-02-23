@@ -40,7 +40,8 @@ $lt_moostyle = "
 ";
 $doc->addStyleDeclaration( $lt_moostyle );
 
-if ($wolfslider_mootools == "1") {
+if ($wolfslider_mootools)
+{
 	JHTML::_('behavior.mootools');
 	$headerstuff=$doc->getHeadData();
 	$key = JURI::base( true ) . '/media/system/js/mootools.js';
@@ -51,14 +52,13 @@ if ($wolfslider_mootools == "1") {
 $doc->addScript('modules/mod_wolfslider/lt_wolfslider/lt_wolfslider.js');
 
 $mooscript = "window.addEvent('domready',function(){
-
 		var lt_wolfslider_handles_more = $$('#lt_wolfslider_handles_more span');
 		var nS8 = new noobSlide({
 			box: $('lt_wolfsliders'),
 			items: $$('#lt_wolfsliders > div'),
 			fade: $wolfslider_fade,
 			size: $wolfslider_width_nopx,
-			$wolfslider_autoplay,
+			autoplay: $wolfslider_autoplay,
 			interval: $wolfslider_speed,
 			handles: $$('#lt_wolfslider_handles span'),
 			addButtons: {previous: $('lt_wolfslider_prev'), play: $('lt_wolfslider_play'), stop: $('lt_wolfslider_stop'), playback: $('lt_wolfslider_playback'), next: $('lt_wolfslider_next') },
@@ -72,7 +72,6 @@ $mooscript = "window.addEvent('domready',function(){
 		nS8.addActionButtons('next',$$('#lt_wolfsliders .next'));
 		nS8.addHandleButtons(lt_wolfslider_handles_more);
 		nS8.walk(0,false,true);
- 
 	});";
 $doc->addScriptDeclaration( $mooscript );
 ?>
