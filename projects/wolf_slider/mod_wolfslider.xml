@@ -42,13 +42,13 @@
 			<option value="1">Yes</option>
 		</param>
 		<param name="slide_picker_pos" type="text" default="slide_picker1" label="Use module in this position as slide picker" description="Name of position assigned to module that contains slide picker" />
-		<param name="slide_picker_selector" type="text" size="50" default="#lt_wolfslider_handles_more span" label="CSS selector for picker elements" description="CSS selector that identifies the element whose children will be used to pick individual slides" />
+		<param name="slide_picker_selector" type="text" size="50" default="#wolfslider_handles_more span" label="CSS selector for picker elements" description="CSS selector that identifies the element whose children will be used to pick individual slides" />
 
 		<param type="spacer" />
 		<param type="spacer" default="Slider Options" />
-		<param name="wolfslider_autoplay" type="list" default="true" label="Auto Play" description="Enable/Disable">
-			<option value="false">No</option>
-			<option value="true">Yes</option>
+		<param name="wolfslider_autoplay" type="radio" default="1" label="Auto Play" description="Enable/Disable">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
 		</param>
 		<param name="wolfslider_effect" type="list" default="1" label="Effect" description="Choose the effect to be used when transitioning between slides">
 			<option value="horizontal">Horizontal Slide</option>
@@ -60,7 +60,7 @@
 
 		<param type="spacer" />
 		<param type="spacer" default="Include Mootools Enable/Disable" />
-		<param name="wolfslider_mootools" type="list" default="1" label="Load Mootools" description="Enable/Disable">
+		<param name="wolfslider_mootools" type="radio" default="1" label="Load Mootools" description="Enable/Disable">
 			<option value="0">No</option>
 			<option value="1">Yes</option>
 		</param>

@@ -26,17 +26,16 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 
 $doc =& JFactory::getDocument();
 $lt_moostyle = "
-#lt_wolfslider_wrap {width: $wolfslider_wrap_width; text-align:left; margin-right: auto; margin-left: auto;}
-#lt_wolfslider_wrap .buttons { text-align: center; clear: both; display: block; margin-top: 0.5em; }
-.lt_wolfslider_container{position:relative; width: $wolfslider_width; height: $wolfslider_height; overflow:hidden; margin-left: 40px;}
-#lt_wolfsliders {position:absolute; z-index: 20;}
-#lt_wolfsliders div{width: $wolfslider_width;	float:left;}
-#lt_wolfslider_next {position:relative; float: right; z-index: 99; display: block; margin-top: 70px; margin-left: 10px; }
-#lt_wolfslider_prev {position:relative; float: left; z-index: 99; display: block; margin-top: 70px; margin-right: 10px; }
-.lt_link {font-size: 0.6em; }
-.buttons#lt_wolfslider_handles { display: none; visibility: hidden; }
-.buttons#lt_wolfslider_handles_more { display: none; visibility: hidden; }
-#lt_wolfslider_playback { display: none; visibility: hidden; }
+#wolfslider_wrap {width: $wolfslider_wrap_width; text-align:left; margin-right: auto; margin-left: auto;}
+#wolfslider_wrap .buttons { text-align: center; clear: both; display: block; margin-top: 0.5em; }
+.wolfslider_container{position:relative; width: $wolfslider_width; height: $wolfslider_height; overflow:hidden; margin-left: 40px;}
+#wolfsliders {position:absolute; z-index: 20;}
+#wolfsliders div{width: $wolfslider_width;	float:left;}
+#wolfslider_next {position:relative; float: right; z-index: 99; display: block; margin-top: 70px; margin-left: 10px; }
+#wolfslider_prev {position:relative; float: left; z-index: 99; display: block; margin-top: 70px; margin-right: 10px; }
+.buttons#wolfslider_handles { display: none; visibility: hidden; }
+.buttons#wolfslider_handles_more { display: none; visibility: hidden; }
+#wolfslider_playback { display: none; visibility: hidden; }
 ";
 $doc->addStyleDeclaration( $lt_moostyle );
 
@@ -55,29 +54,29 @@ $mooscript = "
 	window.addEvent('domready',function(){
 		var slide_picker = $$('$slide_picker_selector');
 		var nS8 = new noobSlide({
-			box: $('lt_wolfsliders'),
-			items: $$('#lt_wolfsliders > div'),
+			box: $('wolfsliders'),
+			items: $$('#wolfsliders > div'),
 			fade: $wolfslider_fade,
 			size: $wolfslider_width_nopx,
-			autoplay: $wolfslider_autoplay,
+			autoPlay: $wolfslider_autoplay,
 			interval: $wolfslider_speed,
 			handles: slide_picker,
-			addButtons: {previous: $('lt_wolfslider_prev'), play: $('lt_wolfslider_play'), stop: $('lt_wolfslider_stop'), playback: $('lt_wolfslider_playback'), next: $('lt_wolfslider_next') },
+			addButtons: {previous: $('wolfslider_prev'), play: $('wolfslider_play'), stop: $('wolfslider_stop'), playback: $('wolfslider_playback'), next: $('wolfslider_next') },
 			onWalk: function(currentItem, currentHandle)
 			{
 				$$(this.handles, slide_picker).removeClass('active');
 				$$(currentHandle, slide_picker[this.currentIndex]).addClass('active');
 			}
 		});
-		nS8.addActionButtons('previous', $$('#lt_wolfsliders .prev'));
-		nS8.addActionButtons('next', $$('#lt_wolfsliders .next'));
+		nS8.addActionButtons('previous', $$('#wolfsliders .prev'));
+		nS8.addActionButtons('next', $$('#wolfsliders .next'));
 		//nS8.addHandleButtons(slide_picker);
 		nS8.walk(0, false, true);
 	});";
 $doc->addScriptDeclaration( $mooscript );
 
 ?>
-<div id="lt_wolfslider_wrap">
+<div id="wolfslider_wrap">
 
 <?php
 // If the configuration specifies that we're going to use a slide picker module
@@ -93,15 +92,15 @@ if ($use_slide_picker)
 	echo "</div>\n";
 }
 ?>
-	<span id="lt_wolfslider_prev">
+	<span id="wolfslider_prev">
 		<img src="<?php echo JURI::base();?>modules/mod_wolfslider/lt_wolfslider/previous.png" alt="Prev" width="40" height="40" />
 	</span>
-	<span id="lt_wolfslider_next">
+	<span id="wolfslider_next">
 		<img src="<?php echo JURI::base();?>modules/mod_wolfslider/lt_wolfslider/next.png" alt="Next" width="40" height="40" />
 	</span> 
  
-	<div class="lt_wolfslider_container"> 
-		<div id="lt_wolfsliders"> 
+	<div class="wolfslider_container"> 
+		<div id="wolfsliders"> 
         
 <?php 
 jimport('joomla.application.module.helper');
@@ -118,23 +117,23 @@ foreach ($wolfslidermod as $display)
 		</div> 
 	</div> 
 	
-	<p class="buttons" id="lt_wolfslider_handles">
+	<p class="buttons" id="wolfslider_handles">
 		<span>Pane 1</span>
 		<span>Pane 2</span>
 		<span>Pane 3</span>
 		<span>Pane 4</span>
 	</p>
 	<p class="buttons">
-		<span id="lt_wolfslider_playback">&lt;Playback</span>
-		<span id="lt_wolfslider_stop">
+		<span id="wolfslider_playback">&lt;Playback</span>
+		<span id="wolfslider_stop">
 			<img src="<?php echo JURI::base();?>modules/mod_wolfslider/lt_wolfslider/pause.png" alt="play" width="40" height="40" />
 		</span>
-		<span id="lt_wolfslider_play">
+		<span id="wolfslider_play">
 			<img src="<?php echo JURI::base();?>modules/mod_wolfslider/lt_wolfslider/play.png" alt="play" width="40" height="40" />
 		</span>
 	</p> 
  
-	<p class="buttons" id="lt_wolfslider_handles_more"> 
+	<p class="buttons" id="wolfslider_handles_more"> 
 		<span>1</span> 
 		<span>2</span> 
 		<span>3</span> 

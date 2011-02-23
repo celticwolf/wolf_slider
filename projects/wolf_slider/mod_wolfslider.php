@@ -29,13 +29,13 @@ $wolfslider_width_nopx	= intval($params->get('wolfslider_width', '550'));
 $wolfslider_width		= $wolfslider_width_nopx . 'px';
 $wolfslider_height		= intval($params->get('wolfslider_height', '200')) . 'px';
 $wolfslider_effect		= $params->get('wolfslider_effect', 'horizontal');
-$wolfslider_mootools	= intval($params->get('wolfslider_mootools', '1')) === 1 ;
+$wolfslider_mootools	= intval($params->get('wolfslider_mootools', '1')) === 1;
 $wolfslider_pos			= $params->get('wolfslider_pos', 'user1'); // Module to use in the 1st slide
-$wolfslider_autoplay	= $params->get('wolfslider_autoplay', 'true') ;
+$wolfslider_autoplay	= intval($params->get('wolfslider_autoplay', '1')) === 1 ? 'true' : 'false';
 $wolfslider_speed		= intval($params->get('wolfslider_speed', '6000'));
 $use_slide_picker		= intval($params->get('use_slide_picker', '0')) === 1;
 $slide_picker_pos		= $params->get('slide_picker_pos', 'slide_picker1');
-$slide_picker_selector	= $params->get('slide_picker_selector', '#lt_wolfslider_handles_more span');
+$slide_picker_selector	= $params->get('slide_picker_selector', '#wolfslider_handles_more span');
 
 // The fade effect is a separate parameter to the JavaScript function, but makes more sense
 // from the user's perspective if it's combined with the horizontal vs. vertical sliding.
