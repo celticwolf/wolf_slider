@@ -31,11 +31,12 @@ $lt_moostyle = "
 .wolfslider_container{position:relative; width: $wolfslider_width; height: $wolfslider_height; overflow:hidden; margin-left: 40px;}
 #wolfsliders {position:absolute; z-index: 20;}
 #wolfsliders div{width: $wolfslider_width;	float:left;}
-#wolfslider_next {position:relative; float: right; z-index: 99; display: block; margin-top: 70px; margin-left: 10px; }
-#wolfslider_prev {position:relative; float: left; z-index: 99; display: block; margin-top: 70px; margin-right: 10px; }
+#wolfslider_next {position:relative; float: right; z-index: 99; display: none; margin-top: 70px; margin-left: 10px; }
+#wolfslider_prev {position:relative; float: left; z-index: 99; display: none; margin-top: 70px; margin-right: 10px; }
 .buttons#wolfslider_handles { display: none; visibility: hidden; }
 .buttons#wolfslider_handles_more { display: none; visibility: hidden; }
 #wolfslider_playback { display: none; visibility: hidden; }
+#wolfslider_playback_controls { display: none; visibility: hidden; }
 ";
 $doc->addStyleDeclaration( $lt_moostyle );
 
@@ -123,7 +124,7 @@ foreach ($wolfslidermod as $display)
 		<span>Pane 3</span>
 		<span>Pane 4</span>
 	</p>
-	<p class="buttons">
+	<p id="wolfslider_playback_controls" class="buttons">
 		<span id="wolfslider_playback">&lt;Playback</span>
 		<span id="wolfslider_stop">
 			<img src="<?php echo JURI::base();?>modules/mod_wolfslider/lt_wolfslider/pause.png" alt="play" width="40" height="40" />
