@@ -1,7 +1,7 @@
-<?php
+	<?php
 /**
  * 
- * MooSlider is a free software: you can redistribute it and/or modify it under the terms
+ * WolfSlider is a free software: you can redistribute it and/or modify it under the terms
  * of the GNU General Public License as published by the Free Software Foundation,
  * either version 3 of the License, or (at your option) any later version.
  *
@@ -17,7 +17,7 @@
  *@copyright (C) 2008 LaunchTulsa.com, 2010 Celtic Wolf, Inc.
  *@link http://launchtulsa.com Official website
  *
- * Portions copyright 2010 Celtic Wolf, Inc.
+ * Portions copyright 2010-2011 Celtic Wolf, Inc.
  * http://www.celticwolf.com/
 **/
 
@@ -57,7 +57,7 @@ $mooscript = "window.addEvent('domready',function(){
 			box: $('lt_wolfsliders'),
 			items: $$('#lt_wolfsliders > div'),
 			fade: $wolfslider_fade,
-			size: $wolfslider_sliderwidth,
+			size: $wolfslider_width_nopx,
 			$wolfslider_autoplay,
 			interval: $wolfslider_speed,
 			handles: $$('#lt_wolfslider_handles span'),
@@ -91,42 +91,7 @@ $doc->addScriptDeclaration( $mooscript );
 <?php 
 jimport('joomla.application.module.helper');
 
-$wolfslidermod =& JModuleHelper::getModules($wolfslider_pos1);
-foreach ($wolfslidermod as $display)
-{
-	$wolfslider_attribs['style'] = 'xhtml';
-	echo JModuleHelper::renderModule($display, $wolfslider_attribs);
-} 
-
-$wolfslidermod =& JModuleHelper::getModules($wolfslider_pos2);
-foreach ($wolfslidermod as $display)
-{
-	$wolfslider_attribs['style'] = 'xhtml';
-	echo JModuleHelper::renderModule($display, $wolfslider_attribs);
-} 
-
-$wolfslidermod =& JModuleHelper::getModules($wolfslider_pos3);
-foreach ($wolfslidermod as $display)
-{
-	$wolfslider_attribs['style'] = 'xhtml';
-	echo JModuleHelper::renderModule($display, $wolfslider_attribs);
-} 
-
-$wolfslidermod =& JModuleHelper::getModules($wolfslider_pos4);
-foreach ($wolfslidermod as $display)
-{
-	$wolfslider_attribs['style'] = 'xhtml';
-	echo JModuleHelper::renderModule($display, $wolfslider_attribs);
-} 
-
-$wolfslidermod =& JModuleHelper::getModules($wolfslider_pos5);
-foreach ($wolfslidermod as $display)
-{
-	$wolfslider_attribs['style'] = 'xhtml';
-	echo JModuleHelper::renderModule($display, $wolfslider_attribs);
-} 
-
-$wolfslidermod =& JModuleHelper::getModules($wolfslider_pos6);
+$wolfslidermod =& JModuleHelper::getModules($wolfslider_pos);
 foreach ($wolfslidermod as $display)
 {
 	$wolfslider_attribs['style'] = 'xhtml';
@@ -160,15 +125,4 @@ foreach ($wolfslidermod as $display)
 		<span>3</span> 
 		<span>4</span> 
 	</p> 
-
-<?php 
-if ($wolfslider_link == "1")
-{
-	echo "<span class='lt_link'><a href='http://launchtulsa.com'>LaunchTulsa.com</a></span>";
-}
-	
-?>
-
-
-
 </div>

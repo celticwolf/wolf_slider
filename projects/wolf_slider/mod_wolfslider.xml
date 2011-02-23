@@ -1,4 +1,4 @@
-<?xml version="1.0.2" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <install type="module" version="1.5.0">
     <name>celticwolf.com WolfSlider 1.0</name>
     <author>celticwolf.com</author>
@@ -6,10 +6,10 @@
 	<copyright>Released under GNU/GPL License</copyright>
 	<license>http://www.gnu.org/licenses/gpl-3.0-standalone.html</license>
 	<license>GNU GPL</license>
-    <version>1.0.2</version>
+    <version>1.0</version>
 	<authorEmail>info@celticwolf.com</authorEmail>
 	<authorUrl>www.celticwolf.com</authorUrl>
-    <description>WolfSlider Displays any module in a slider - submit bugs at celticwolf.com</description>
+    <description>WolfSlider Displays any module in a slider - submit bugs at www.celticwolf.com</description>
 	
 	
 	<files>
@@ -28,15 +28,18 @@
     <params>
 		<param type="spacer" />
 		<param type="spacer" default="WolfSlider Width and Height" />
-		<param name="wolfslider_wrap_width" type="text" default="600px" label="WolfSlider Width" description="WolfSlider Container" />
-		<param name="wolfslider_width" type="text" default="550px" label="Width of Sliders" description="Width of WolfSlider" />
-		<param name="wolfslider_sliderwidth" type="text" default="550" label="Width of Sliders - without px" description="Value must be the same as above without px or % added" />	
-		<param name="wolfslider_height" type="text" default="200px" label="Height" description="Height of WolfSlider" />
+		<param name="wolfslider_wrap_width" type="text" default="600" label="WolfSlider Width (in px)" description="WolfSlider Container" />
+		<param name="wolfslider_width" type="text" default="550" label="Width of Slides (in px)" description="Width of WolfSlider" />
+		<param name="wolfslider_height" type="text" default="200" label="Height (in px)" description="Height of WolfSlider" />
 		<param name="wolfslider_effect" type="list" default="1" label="Effect" description="Choose the effect to be used when transitioning between slides">
 			<option value="horizontal">Horizontal Slide</option>
 			<option value="vertical">Vertical Slide</option>
 			<option value="fade">Fade</option>
 		</param>
+
+		<param type="spacer" />
+		<param type="spacer" default="Module Positions Within WolfSlider" />
+		<param name="wolfslider_pos" type="text" default="wolfslider1" label="Position of Slide Modules" description="Name of position assigned to modules for slideshow" />	
 
 		<param type="spacer" />
 		<param type="spacer" default="Slider Options" />
@@ -53,25 +56,7 @@
 		</param>
 		<param type="spacer" />
 		<param type="spacer" default="WolfSlider Speed" />
-		<param name="wolfslider_speed" type="text" default="6000" label="Speed" description="Speed of WolfSlider" />
+		<param name="wolfslider_speed" type="text" default="6000" label="Speed (in milliseconds)" description="Speed of WolfSlider" />
 
-		<param type="spacer" />
-		<param type="spacer" default="Module Positions Within WolfSlider" />
-		<param name="wolfslider_pos1" type="text" default="wolfslider1" label="1st slide" description="Module to use in the 1st slide" />	
-		<param name="wolfslider_pos2" type="text" default="wolfslider2" label="2nd slide" description="Module to use in the 2nd slide" />
-		<param name="wolfslider_pos3" type="text" default="wolfslider3" label="3rd slide" description="Module to use in the 3rd slide" />	
-		<param name="wolfslider_pos4" type="text" default="wolfslider4" label="4th slide" description="Module to use in the 4th slide" />	
-		<param name="wolfslider_pos5" type="text" default="wolfslider5" label="5th slide" description="Module to use in the 5th slide" />	
-		<param name="wolfslider_pos6" type="text" default="wolfslider6" label="6th slide" description="Module to use in the 6th slide" />	
-
-		<param type="spacer" />
-		<param type="spacer" default="Copyright / License To Use" />
-		<param name="wolfslider_link" type="list" default="1" label="Enable Link Under Slider" description="Enable/Disable">
-			<option value="0">No</option>
-			<option value="1">Yes</option>
-		</param>	
-
-		<param type="spacer" default="If set to NO, a link in the footer is required. Copy/paste this code into your footer:" />
-		<param name="test" type="textarea" default="&lt;a href=&quot;http://celticwolf.com&quot; title=&quot;celticwolf.com&quot;&gt;celticwolf.com&lt;/a&gt;" description="Enable/Disable" label="Copy/Paste Into Footer" rows="10" cols="60" />
 	</params>
 </install>
