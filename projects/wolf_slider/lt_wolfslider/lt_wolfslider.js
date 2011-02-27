@@ -7,7 +7,7 @@ License:
 	MIT License
  
 Class
-	noobSlide (rev.19-06-08)
+	noobSlide (rev.03-11-10)
 	noobSlide Extention for Fading (rev. 23-10-08)
 
 Arguments:
@@ -141,11 +141,11 @@ var noobSlide = new Class({
 		for(var i=0;i<handles.length;i++){
 			if(this.fade)
 			{
-				handles[i].addEvent(this.handle_event,this.fading.bind(this,[i,true]));
+				handles[i].addEvent(this.handle_event,this.fading.pass([i,true],this));
 			}
 			else
 			{
-				handles[i].addEvent(this.handle_event,this.walk.bind(this,[i,true]));
+				handles[i].addEvent(this.handle_event,this.walk.pass([i,true],this));
 			}
 		}
 	},
@@ -153,11 +153,11 @@ var noobSlide = new Class({
 	addActionButtons: function(action,buttons){
 		for(var i=0; i<buttons.length; i++){
 			switch(action){
-				case 'previous': buttons[i].addEvent(this.button_event,this.previous.bind(this,[true])); break;
-				case 'next': buttons[i].addEvent(this.button_event,this.next.bind(this,[true])); break;
-				case 'play': buttons[i].addEvent(this.button_event,this.play.bind(this,[this.interval,'next',false])); break;
-				case 'playback': buttons[i].addEvent(this.button_event,this.play.bind(this,[this.interval,'previous',false])); break;
-				case 'stop': buttons[i].addEvent(this.button_event,this.stop.bind(this)); break;
+				case 'previous': buttons[i].addEvent(this.button_event,this.previous.pass([true],this)); break;
+				case 'next': buttons[i].addEvent(this.button_event,this.next.pass([true],this)); break;
+				case 'play': buttons[i].addEvent(this.button_event,this.play.pass([this.interval,'next',false],this)); break;
+				case 'playback': buttons[i].addEvent(this.button_event,this.play.pass([this.interval,'previous',false],this)); break;
+				case 'stop': buttons[i].addEvent(this.button_event,this.stop.create({bind:this})); break;
 			}
 			this.buttons[action].push(buttons[i]);
 		}
