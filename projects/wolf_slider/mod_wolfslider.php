@@ -14,7 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  *@author LaunchTulsa.com
- *@copyright (C) 2008 LaunchTulsa.com, 2010 Celtic Wolf, Inc.
+ *@copyright (C) 2008 LaunchTulsa.com, 2010-2011 Celtic Wolf, Inc.
  *@link http://launchtulsa.com Official website
  *
  * Portions copyright 2010 Celtic Wolf, Inc.
@@ -36,6 +36,10 @@ $wolfslider_speed		= intval($params->get('wolfslider_speed', '6000'));
 $use_slide_picker		= intval($params->get('use_slide_picker', '0')) === 1;
 $slide_picker_pos		= $params->get('slide_picker_pos', 'slide_picker1');
 $slide_picker_selector	= $params->get('slide_picker_selector', '#wolfslider_handles_more span');
+$slides_z_index			= intval($params->get('slides_z_index', '1'));
+$slide_buttons_z_index	= intval($params->get('slide_buttons_z_index', '2'));
+$show_playback_buttons	= intval($params->get('show_playback_buttons', '0')) === 1;
+$playback_buttons_visible = $show_playback_buttons ? 'inline' : 'none';
 
 // The fade effect is a separate parameter to the JavaScript function, but makes more sense
 // from the user's perspective if it's combined with the horizontal vs. vertical sliding.

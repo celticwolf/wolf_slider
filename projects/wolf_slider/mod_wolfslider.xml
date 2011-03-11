@@ -27,14 +27,23 @@
 	
     <params>
 		<param type="spacer" />
-		<param type="spacer" default="WolfSlider Width and Height" />
+		<param type="spacer" default="WolfSlider Layout" />
 		<param name="wolfslider_wrap_width" type="text" default="600" label="WolfSlider Width (in px)" description="WolfSlider Container" />
 		<param name="wolfslider_width" type="text" default="550" label="Width of Slides (in px)" description="Width of WolfSlider" />
 		<param name="wolfslider_height" type="text" default="200" label="Height (in px)" description="Height of WolfSlider" />
+		<param name="slides_z_index" type="text" default="1" label="z-index of slides" description="Z-index of the slides.  Controls whether they will appear over, under or on the same level as other elements on the page." />
+		<param name="slide_buttons_z_index" type="text" default="2" label="z-index of slide buttons" description="Z-index of the playback control buttons.  Controls whether they will appear over, under or on the same level as other elements on the page." />
 		<param type="spacer" />
 		<param type="spacer" default="Slides" />
 		<param name="wolfslider_pos" type="text" default="wolfslider1" label="Use modules in this position as slides" description="Name of position assigned to modules for slideshow" />	
 
+		<param type="spacer" />
+		<param type="spacer" default="Playback buttons" />
+		<param name="show_playback_buttons" type="radio" default="0" label="Show playback buttons?" description="Show the play, pause, previous and next buttons to allow the user to control playback.">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+		
 		<param type="spacer" />
 		<param type="spacer" default="Slide Picker" />
 		<param name="use_slide_picker" type="radio" default="0" label="Use a slide picker?" description="Use a series of numbers or links to directly go to specific slides">

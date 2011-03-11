@@ -25,20 +25,20 @@
 defined( '_JEXEC' ) or die( 'Restricted access' );
 
 $doc =& JFactory::getDocument();
-$lt_moostyle = "
+$moostyle = "
 #wolfslider_wrap {width: $wolfslider_wrap_width; text-align:left; margin-right: auto; margin-left: auto;}
 #wolfslider_wrap .buttons { text-align: center; clear: both; display: block; margin-top: 0.5em; }
 .wolfslider_container{position:relative; width: $wolfslider_width; height: $wolfslider_height; overflow:hidden; margin-left: 40px;}
-#wolfsliders {position:absolute; z-index: 1;}
+#wolfsliders {position:absolute; z-index: $slides_z_index;}
 #wolfsliders div{width: $wolfslider_width;	float:left;}
-#wolfslider_next {position:relative; float: right; z-index: 2; display: none; margin-top: 70px; margin-left: 10px; }
-#wolfslider_prev {position:relative; float: left; z-index: 2; display: none; margin-top: 70px; margin-right: 10px; }
+#wolfslider_next {position:relative; float: right; z-index: $slide_buttons_z_index; display: $playback_buttons_visible; margin-top: 70px; margin-left: 10px; }
+#wolfslider_prev {position:relative; float: left; z-index: $slide_buttons_z_index; display: $playback_buttons_visible; margin-top: 70px; margin-right: 10px; }
 .buttons#wolfslider_handles { display: none; visibility: hidden; }
 .buttons#wolfslider_handles_more { display: none; visibility: hidden; }
 #wolfslider_playback { display: none; visibility: hidden; }
 #wolfslider_playback_controls { display: none; visibility: hidden; }
 ";
-$doc->addStyleDeclaration( $lt_moostyle );
+$doc->addStyleDeclaration($moostyle);
 
 if ($wolfslider_mootools)
 {
