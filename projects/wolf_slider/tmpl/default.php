@@ -1,4 +1,4 @@
-	<?php
+<?php
 /**
  * 
  * WolfSlider is a free software: you can redistribute it and/or modify it under the terms
@@ -14,7 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  *@author LaunchTulsa.com
- *@copyright (C) 2008 LaunchTulsa.com, 2010 Celtic Wolf, Inc.
+ *@copyright (C) 2008 LaunchTulsa.com, 2010-2011 Celtic Wolf, Inc.
  *@link http://launchtulsa.com Official website
  *
  * Portions copyright 2010-2011 Celtic Wolf, Inc.
@@ -27,16 +27,12 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 $doc =& JFactory::getDocument();
 $moostyle = "
 #wolfslider_wrap {width: $wolfslider_wrap_width; text-align:left; margin-right: auto; margin-left: auto;}
-#wolfslider_wrap .buttons { text-align: center; clear: both; display: block; margin-top: 0.5em; }
 .wolfslider_container{position:relative; width: $wolfslider_width; height: $wolfslider_height; overflow:hidden; margin-left: 40px;}
 #wolfsliders {position:absolute; z-index: $slides_z_index;}
 #wolfsliders div{width: $wolfslider_width;	float:left;}
-#wolfslider_next {position:relative; float: right; z-index: $slide_buttons_z_index; display: $playback_buttons_visible; margin-top: 70px; margin-left: 10px; }
-#wolfslider_prev {position:relative; float: left; z-index: $slide_buttons_z_index; display: $playback_buttons_visible; margin-top: 70px; margin-right: 10px; }
-.buttons#wolfslider_handles { display: none; visibility: hidden; }
-.buttons#wolfslider_handles_more { display: none; visibility: hidden; }
-#wolfslider_playback { display: none; visibility: hidden; }
-#wolfslider_playback_controls { display: none; visibility: hidden; }
+#wolfslider_next {position:relative; float: right; z-index: $slide_buttons_z_index; display: $playback_buttons_display; margin-top: 70px; margin-left: 10px; }
+#wolfslider_prev {position:relative; float: left; z-index: $slide_buttons_z_index; display: $playback_buttons_display; margin-top: 70px; margin-right: 10px; }
+#wolfslider_playback_controls { clear: both; display: $playback_buttons_display; margin-top: 0.5em; text-align: center; visibility: $playback_buttons_visible; }
 ";
 $doc->addStyleDeclaration($moostyle);
 
@@ -62,7 +58,7 @@ $mooscript = "
 			autoPlay: $wolfslider_autoplay,
 			interval: $wolfslider_speed,
 			handles: slide_picker,
-			addButtons: {previous: $('wolfslider_prev'), play: $('wolfslider_play'), stop: $('wolfslider_stop'), playback: $('wolfslider_playback'), next: $('wolfslider_next') },
+			addButtons: {previous: $('wolfslider_prev'), play: $('wolfslider_play'), stop: $('wolfslider_stop'), next: $('wolfslider_next') },
 			onWalk: function(currentItem, currentHandle)
 			{
 				$$(this.handles, slide_picker).removeClass('active');
@@ -118,26 +114,12 @@ foreach ($wolfslidermod as $display)
 		</div> 
 	</div> 
 	
-	<p class="buttons" id="wolfslider_handles">
-		<span>Pane 1</span>
-		<span>Pane 2</span>
-		<span>Pane 3</span>
-		<span>Pane 4</span>
-	</p>
-	<p id="wolfslider_playback_controls" class="buttons">
-		<span id="wolfslider_playback">&lt;Playback</span>
+	<p id="wolfslider_playback_controls">
 		<span id="wolfslider_stop">
 			<img src="<?php echo JURI::base();?>modules/mod_wolfslider/lt_wolfslider/pause.png" alt="play" width="40" height="40" />
 		</span>
 		<span id="wolfslider_play">
 			<img src="<?php echo JURI::base();?>modules/mod_wolfslider/lt_wolfslider/play.png" alt="play" width="40" height="40" />
 		</span>
-	</p> 
- 
-	<p class="buttons" id="wolfslider_handles_more"> 
-		<span>1</span> 
-		<span>2</span> 
-		<span>3</span> 
-		<span>4</span> 
 	</p> 
 </div>

@@ -39,7 +39,8 @@ $slide_picker_selector	= $params->get('slide_picker_selector', '#wolfslider_hand
 $slides_z_index			= intval($params->get('slides_z_index', '1'));
 $slide_buttons_z_index	= intval($params->get('slide_buttons_z_index', '2'));
 $show_playback_buttons	= intval($params->get('show_playback_buttons', '0')) === 1;
-$playback_buttons_visible = $show_playback_buttons ? 'inline' : 'none';
+$playback_buttons_display = $show_playback_buttons ? 'block' : 'none';
+$playback_buttons_visible = $show_playback_buttons ? 'visible' : 'hidden';
 
 // The fade effect is a separate parameter to the JavaScript function, but makes more sense
 // from the user's perspective if it's combined with the horizontal vs. vertical sliding.
