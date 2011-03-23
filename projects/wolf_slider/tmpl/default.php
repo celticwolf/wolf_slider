@@ -45,7 +45,7 @@ if ($wolfslider_mootools)
 	$doc->setHeadData($headerstuff);
 	$doc->addScript('modules/mod_wolfslider/lt_wolfslider/mootools-1.2-core.js');
 }
-$doc->addScript('modules/mod_wolfslider/lt_wolfslider/lt_wolfslider.js');
+$doc->addScript('modules/mod_wolfslider/lt_wolfslider/_class.noobSlide.js');
 
 $mooscript = "
 	window.addEvent('domready',function(){
