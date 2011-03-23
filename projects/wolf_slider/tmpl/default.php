@@ -26,12 +26,12 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 
 $doc =& JFactory::getDocument();
 $moostyle = "
-#wolfslider_wrap {width: $wolfslider_wrap_width; text-align:left; margin-right: auto; margin-left: auto;}
-.wolfslider_container{position:relative; width: $wolfslider_width; height: $wolfslider_height; overflow:hidden; margin-left: 40px;}
-#wolfsliders {position:absolute; z-index: $slides_z_index;}
-#wolfsliders div {float:left; height: $wolfslider_height; margin: 0; width: $wolfslider_width; }
-#wolfslider_next {position:relative; float: right; z-index: $slide_buttons_z_index; display: $playback_buttons_display; margin-top: 70px; margin-left: 10px; }
-#wolfslider_prev {position:relative; float: left; z-index: $slide_buttons_z_index; display: $playback_buttons_display; margin-top: 70px; margin-right: 10px; }
+#wolfslider_wrap { width: $wolfslider_wrap_width; text-align:left; margin-right: auto; margin-left: auto; }
+.wolfslider_container { position:relative; width: $wolfslider_width; height: $wolfslider_height; overflow:hidden; margin-left: 40px; }
+#wolfsliders { position:absolute; z-index: $slides_z_index; }
+#wolfsliders div { float:left; height: $wolfslider_height; margin: 0; padding: 0; width: $wolfslider_width; }
+#wolfslider_next { position:relative; float: right; z-index: $slide_buttons_z_index; display: $playback_buttons_display; margin-top: 70px; margin-left: 10px; }
+#wolfslider_prev { position:relative; float: left; z-index: $slide_buttons_z_index; display: $playback_buttons_display; margin-top: 70px; margin-right: 10px; }
 #wolfslider_playback_controls { clear: both; display: $playback_buttons_display; margin-top: 0.5em; text-align: center; visibility: $playback_buttons_visible; }
 ";
 $doc->addStyleDeclaration($moostyle);
@@ -43,9 +43,9 @@ if ($wolfslider_mootools)
 	$key = JURI::base( true ) . '/media/system/js/mootools.js';
 	unset( $headerstuff['scripts'][$key] );
 	$doc->setHeadData($headerstuff);
-	$doc->addScript('modules/mod_wolfslider/lt_wolfslider/mootools-1.2-core.js');
+	$doc->addScript('modules/mod_wolfslider/wolfslider/mootools-1.2-core.js');
 }
-$doc->addScript('modules/mod_wolfslider/lt_wolfslider/_class.noobSlide.js');
+$doc->addScript('modules/mod_wolfslider/wolfslider/_class.noobSlide.js');
 
 $mooscript = "
 	window.addEvent('domready',function(){
@@ -91,10 +91,10 @@ if ($use_slide_picker)
 }
 ?>
 	<span id="wolfslider_prev">
-		<img src="<?php echo JURI::base();?>modules/mod_wolfslider/lt_wolfslider/previous.png" alt="Prev" width="40" height="40" />
+		<img src="<?php echo JURI::base();?>modules/mod_wolfslider/wolfslider/previous.png" alt="Prev" width="40" height="40" />
 	</span>
 	<span id="wolfslider_next">
-		<img src="<?php echo JURI::base();?>modules/mod_wolfslider/lt_wolfslider/next.png" alt="Next" width="40" height="40" />
+		<img src="<?php echo JURI::base();?>modules/mod_wolfslider/wolfslider/next.png" alt="Next" width="40" height="40" />
 	</span> 
  
 	<div class="wolfslider_container"> 
@@ -117,10 +117,10 @@ foreach ($wolfslidermod as $display)
 	
 	<p id="wolfslider_playback_controls">
 		<span id="wolfslider_stop">
-			<img src="<?php echo JURI::base();?>modules/mod_wolfslider/lt_wolfslider/pause.png" alt="play" width="40" height="40" />
+			<img src="<?php echo JURI::base();?>modules/mod_wolfslider/wolfslider/pause.png" alt="play" width="40" height="40" />
 		</span>
 		<span id="wolfslider_play">
-			<img src="<?php echo JURI::base();?>modules/mod_wolfslider/lt_wolfslider/play.png" alt="play" width="40" height="40" />
+			<img src="<?php echo JURI::base();?>modules/mod_wolfslider/wolfslider/play.png" alt="play" width="40" height="40" />
 		</span>
 	</p> 
 </div>
