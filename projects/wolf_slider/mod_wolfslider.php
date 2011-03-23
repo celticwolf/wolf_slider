@@ -24,11 +24,13 @@
 // no direct access
 defined( "_JEXEC" ) or die( "Restricted access" );
 
+define('MODE_HORIZONTAL', 'horizontal');
+
 $wolfslider_wrap_width	= intval($params->get('wolfslider_wrap_width', '600')) . 'px';
 $wolfslider_width_nopx	= intval($params->get('wolfslider_width', '550'));
 $wolfslider_width		= $wolfslider_width_nopx . 'px';
 $wolfslider_height		= intval($params->get('wolfslider_height', '200')) . 'px';
-$wolfslider_effect		= $params->get('wolfslider_effect', 'horizontal');
+$wolfslider_effect		= $params->get('wolfslider_effect', MODE_HORIZONTAL);
 $wolfslider_mootools	= intval($params->get('wolfslider_mootools', '1')) === 1;
 $wolfslider_pos			= $params->get('wolfslider_pos', 'user1'); // Module to use in the 1st slide
 $wolfslider_autoplay	= intval($params->get('wolfslider_autoplay', '1')) === 1 ? 'true' : 'false';
@@ -46,6 +48,7 @@ $playback_buttons_visible = $show_playback_buttons ? 'visible' : 'hidden';
 // from the user's perspective if it's combined with the horizontal vs. vertical sliding.
 // To accommodate the user, we split it into a separate variable here.
 $wolfslider_fade = (0 === strcasecmp($wolfslider_effect, 'fade')) ? 'true' : 'false';
+$wolfslider_mode = (0 === strcasecmp($wolfslider_effect, 'fade')) ? MODE_HORIZONTAL : $wolfslider_effect;
 
 require( JModuleHelper::getLayoutPath( 'mod_wolfslider' ) );
 

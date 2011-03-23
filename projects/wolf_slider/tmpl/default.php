@@ -53,8 +53,9 @@ $mooscript = "
 		var nS8 = new noobSlide({
 			box: $('wolfsliders'),
 			items: $$('#wolfsliders > div'),
-			fade: $wolfslider_fade,
 			size: $wolfslider_width_nopx,
+			mode: $wolfslider_mode,
+			fade: $wolfslider_fade,
 			autoPlay: $wolfslider_autoplay,
 			interval: $wolfslider_speed,
 			handles: slide_picker,
