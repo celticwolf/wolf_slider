@@ -52,7 +52,7 @@
 			<option value="vertical">Vertical Slide</option>
 			<option value="fade">Fade</option>
 		</param>
-		<param name="wolfslider_speed" type="text" default="6000" label="Speed (in milliseconds)" description="Speed of WolfSlider" />
+		<param name="wolfslider_speed" type="text" default="6" label="Delay (in seconds)" description="Delay between changing slides" />
 
 		<param type="spacer" />
 		<param type="spacer" default="Slide Picker" />

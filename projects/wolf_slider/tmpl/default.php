@@ -29,7 +29,7 @@ $moostyle = "
 #wolfslider_wrap {width: $wolfslider_wrap_width; text-align:left; margin-right: auto; margin-left: auto;}
 .wolfslider_container{position:relative; width: $wolfslider_width; height: $wolfslider_height; overflow:hidden; margin-left: 40px;}
 #wolfsliders {position:absolute; z-index: $slides_z_index;}
-#wolfsliders div{width: $wolfslider_width;	float:left;}
+#wolfsliders div {float:left; height: $wolfslider_height; margin: 0; width: $wolfslider_width; }
 #wolfslider_next {position:relative; float: right; z-index: $slide_buttons_z_index; display: $playback_buttons_display; margin-top: 70px; margin-left: 10px; }
 #wolfslider_prev {position:relative; float: left; z-index: $slide_buttons_z_index; display: $playback_buttons_display; margin-top: 70px; margin-right: 10px; }
 #wolfslider_playback_controls { clear: both; display: $playback_buttons_display; margin-top: 0.5em; text-align: center; visibility: $playback_buttons_visible; }
@@ -53,8 +53,8 @@ $mooscript = "
 		var nS8 = new noobSlide({
 			box: $('wolfsliders'),
 			items: $$('#wolfsliders > div'),
-			size: $wolfslider_width_nopx,
-			mode: $wolfslider_mode,
+			size: $wolfslider_size,
+			mode: '$wolfslider_mode',
 			fade: $wolfslider_fade,
 			autoPlay: $wolfslider_autoplay,
 			interval: $wolfslider_speed,

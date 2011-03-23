@@ -29,12 +29,13 @@ define('MODE_HORIZONTAL', 'horizontal');
 $wolfslider_wrap_width	= intval($params->get('wolfslider_wrap_width', '600')) . 'px';
 $wolfslider_width_nopx	= intval($params->get('wolfslider_width', '550'));
 $wolfslider_width		= $wolfslider_width_nopx . 'px';
-$wolfslider_height		= intval($params->get('wolfslider_height', '200')) . 'px';
+$wolfslider_height_nopx	= intval($params->get('wolfslider_height', '200'));
+$wolfslider_height		= $wolfslider_height_nopx . 'px';
 $wolfslider_effect		= $params->get('wolfslider_effect', MODE_HORIZONTAL);
 $wolfslider_mootools	= intval($params->get('wolfslider_mootools', '1')) === 1;
 $wolfslider_pos			= $params->get('wolfslider_pos', 'user1'); // Module to use in the 1st slide
 $wolfslider_autoplay	= intval($params->get('wolfslider_autoplay', '1')) === 1 ? 'true' : 'false';
-$wolfslider_speed		= intval($params->get('wolfslider_speed', '6000'));
+$wolfslider_speed		= intval($params->get('wolfslider_speed', '6')) * 1000;
 $use_slide_picker		= intval($params->get('use_slide_picker', '0')) === 1;
 $slide_picker_pos		= $params->get('slide_picker_pos', 'slide_picker1');
 $slide_picker_selector	= $params->get('slide_picker_selector', '#wolfslider_handles_more span');
@@ -49,6 +50,10 @@ $playback_buttons_visible = $show_playback_buttons ? 'visible' : 'hidden';
 // To accommodate the user, we split it into a separate variable here.
 $wolfslider_fade = (0 === strcasecmp($wolfslider_effect, 'fade')) ? 'true' : 'false';
 $wolfslider_mode = (0 === strcasecmp($wolfslider_effect, 'fade')) ? MODE_HORIZONTAL : $wolfslider_effect;
+
+// The size parameter to the noobSlide ctor should be the width of the slides
+// if the effect is a horizontal slide, and the height if the effect is a vertical slide.
+$wolfslider_size = (0 === strcasecmp($wolfslider_mode, MODE_HORIZONTAL)) ? $wolfslider_width_nopx : $wolfslider_height_nopx;
 
 require( JModuleHelper::getLayoutPath( 'mod_wolfslider' ) );
 
