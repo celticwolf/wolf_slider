@@ -27,7 +27,7 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 $doc =& JFactory::getDocument();
 $moostyle = "
 #wolfslider_wrap { width: $wolfslider_wrap_width; text-align:left; margin-right: auto; margin-left: auto; }
-.wolfslider_container { position:relative; width: $wolfslider_width; height: $wolfslider_height; overflow:hidden; margin-left: 40px; }
+.wolfslider_container { position:relative; width: $wolfslider_width; height: $wolfslider_height; overflow:hidden; margin-left: 50px; }
 #wolfsliders { position:absolute; z-index: $slides_z_index; }
 #wolfsliders div { float:left; height: $wolfslider_height; margin: 0; padding: 0; width: $wolfslider_width; }
 #wolfslider_next { position:relative; float: right; z-index: $slide_buttons_z_index; display: $playback_buttons_display; margin-top: 70px; margin-left: 10px; }
