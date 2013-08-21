@@ -13,7 +13,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
- *@author LaunchTulsa.com
+ *@author LaunchTulsa.com, Celtic Wolf, Inc.
  *@copyright (C) 2008 LaunchTulsa.com, 2010-2011, 2013 Celtic Wolf, Inc.
  *@link http://www.celticwolf.com/
 **/

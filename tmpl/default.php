@@ -1,6 +1,6 @@
 <?php
 /**
- * 
+ *
  * WolfSlider is a free software: you can redistribute it and/or modify it under the terms
  * of the GNU General Public License as published by the Free Software Foundation,
  * either version 3 of the License, or (at your option) any later version.
@@ -13,12 +13,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
- *@author LaunchTulsa.com
- *@copyright (C) 2008 LaunchTulsa.com, 2010-2011 Celtic Wolf, Inc.
- *@link http://launchtulsa.com Official website
- *
- * Portions copyright 2010-2011 Celtic Wolf, Inc.
- * http://www.celticwolf.com/
+ *@author LaunchTulsa.com, Celtic Wolf, Inc.
+ *@copyright (C) 2008 LaunchTulsa.com, 2010-2011, 2013 Celtic Wolf, Inc.
+ *@link http://www.celticwolf.com/
 **/
 
 // no direct access
@@ -95,12 +92,12 @@ if ($use_slide_picker)
 	</span>
 	<span id="wolfslider_next">
 		<img src="<?php echo JURI::base();?>modules/mod_wolfslider/wolfslider/next.png" alt="Next" width="40" height="40" />
-	</span> 
- 
-	<div class="wolfslider_container"> 
-		<div id="wolfsliders"> 
-        
-<?php 
+	</span>
+
+	<div class="wolfslider_container">
+		<div id="wolfsliders">
+
+<?php
 jimport('joomla.application.module.helper');
 
 $wolfslidermod =& JModuleHelper::getModules($wolfslider_pos);
@@ -108,13 +105,13 @@ foreach ($wolfslidermod as $display)
 {
 	$wolfslider_attribs['style'] = 'xhtml';
 	echo JModuleHelper::renderModule($display, $wolfslider_attribs);
-} 
+}
 
 ?>
 
-		</div> 
-	</div> 
-	
+		</div>
+	</div>
+
 	<p id="wolfslider_playback_controls">
 		<span id="wolfslider_stop">
 			<img src="<?php echo JURI::base();?>modules/mod_wolfslider/wolfslider/pause.png" alt="play" width="40" height="40" />
@@ -122,5 +119,5 @@ foreach ($wolfslidermod as $display)
 		<span id="wolfslider_play">
 			<img src="<?php echo JURI::base();?>modules/mod_wolfslider/wolfslider/play.png" alt="play" width="40" height="40" />
 		</span>
-	</p> 
+	</p>
 </div>
