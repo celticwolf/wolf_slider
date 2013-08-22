@@ -38,43 +38,43 @@
 		<param type="spacer" />
 		<param type="spacer" default="PARAM_TITLE_WOLFSLIDER_LAYOUT" />
 		<param name="wolfslider_wrap_width" type="text" default="600" label="PARAM_LABEL_WOLFSLIDER_WIDTH" description="PARAM_DESC_WOLFSLIDER_WIDTH" />
-		<param name="wolfslider_width" type="text" default="550" label="Width of Slides (in px)" description="Width of WolfSlider" />
-		<param name="wolfslider_height" type="text" default="200" label="Height (in px)" description="Height of WolfSlider" />
-		<param name="slides_z_index" type="text" default="1" label="z-index of slides" description="Z-index of the slides.  Controls whether they will appear over, under or on the same level as other elements on the page." />
-		<param name="slide_buttons_z_index" type="text" default="2" label="z-index of slide buttons" description="Z-index of the playback control buttons.  Controls whether they will appear over, under or on the same level as other elements on the page." />
+		<param name="wolfslider_width" type="text" default="550" label="PARAM_LABEL_SLIDE_WIDTH" description="PARAM_DESC_SLIDE_WIDTH" />
+		<param name="wolfslider_height" type="text" default="200" label="PARAM_LABEL_SLIDE_HEIGHT" description="PARAM_DESC_SLIDE_HEIGHT" />
+		<param name="slides_z_index" type="text" default="1" label="PARAM_LABEL_SLIDE_Z_INDEX" description="PARAM_DESC_SLIDE_Z_INDEX" />
+		<param name="slide_buttons_z_index" type="text" default="2" label="PARAM_LABEL_SLIDE_BUTTONS_Z_INDEX" description="PARAM_DESC_SLIDE_BUTTONS_Z_INDEX" />
 		<param type="spacer" />
-		<param type="spacer" default="Slides" />
-		<param name="wolfslider_pos" type="text" default="wolfslider1" label="Use modules in this position as slides" description="Name of position assigned to modules for slideshow" />
+		<param type="spacer" default="PARAM_TITLE_SLIDES" />
+		<param name="wolfslider_pos" type="text" default="wolfslider1" label="PARAM_LABEL_WOLFSLIDER_POS" description="PARAM_DESC_WOLFSLIDER_POS" />
 
 		<param type="spacer" />
-		<param type="spacer" default="Slider Options" />
-		<param name="wolfslider_autoplay" type="radio" default="1" label="Auto Play" description="Enable/Disable">
+		<param type="spacer" default="PARAM_TITLE_WOLFSLIDER_OPTIONS" />
+		<param name="wolfslider_autoplay" type="radio" default="1" label="PARAM_LABEL_AUTOPLAY" description="PARAM_DESC_AUTOPLAY">
 			<option value="0">No</option>
 			<option value="1">Yes</option>
 		</param>
-		<param name="show_playback_buttons" type="radio" default="0" label="Show playback buttons?" description="Show the play, pause, previous and next buttons to allow the user to control playback.">
+		<param name="wolfslider_speed" type="text" default="6" label="PARAM_LABEL_SPEED" description="PARAM_DESC_SPEED" />
+		<param name="show_playback_buttons" type="radio" default="0" label="PARAM_LABEL_SHOW_PLAYBACK_BUTTONS" description="PARAM_DESC_SHOW_PLAYBACK_BUTTONS">
 			<option value="0">No</option>
 			<option value="1">Yes</option>
 		</param>
-		<param name="wolfslider_effect" type="list" default="1" label="Effect" description="Choose the effect to be used when transitioning between slides">
+		<param name="wolfslider_effect" type="list" default="1" label="PARAM_LABEL_EFFECT" description="PARAM_DESC_EFFECT">
 			<option value="horizontal">Horizontal Slide</option>
 			<option value="vertical">Vertical Slide</option>
 			<option value="fade">Fade</option>
 		</param>
-		<param name="wolfslider_speed" type="text" default="6" label="Delay (in seconds)" description="Delay between changing slides" />
 
 		<param type="spacer" />
 		<param type="spacer" default="Slide Picker" />
-		<param name="use_slide_picker" type="radio" default="0" label="Use a slide picker?" description="Use a series of numbers or links to directly go to specific slides">
+		<param name="use_slide_picker" type="radio" default="0" label="PARAM_LABEL_USE_SLIDE_PICKER" description="PARAM_DESC_USE_SLIDE_PICKER">
 			<option value="0">No</option>
 			<option value="1">Yes</option>
 		</param>
-		<param name="slide_picker_pos" type="text" default="slide_picker1" label="Use module in this position as slide picker" description="Name of position assigned to module that contains slide picker" />
-		<param name="slide_picker_selector" type="text" size="50" default="#wolfslider_handles_more span" label="CSS selector for picker elements" description="CSS selector that identifies the element whose children will be used to pick individual slides" />
+		<param name="slide_picker_pos" type="text" default="slide_picker1" label="PARAM_LABEL_SLIDE_PICKER_POS" description="PARAM_DESC_SLIDE_PICKER_POS" />
+		<param name="slide_picker_selector" type="text" size="50" default="#wolfslider_handles_more span" label="PARAM_LABEL_SLIDE_PICKER_SELECTOR" description="PARAM_DESC_SLIDE_PICKER_SELECTOR" />
 
 		<param type="spacer" />
-		<param type="spacer" default="Load Mootools 1.2 from Wolf Slider directory?" />
-		<param name="wolfslider_mootools" type="radio" default="1" label="Load Mootools" description="Enable/Disable">
+		<param type="spacer" default="PARAM_TITLE_LOAD_MOOTOOLS" />
+		<param name="wolfslider_mootools" type="radio" default="1" label="PARAM_LABEL_LOAD_MOOTOOLS" description="PARAM_DESC_LOAD_MOOTOOLS">
 			<option value="0">No</option>
 			<option value="1">Yes</option>
 		</param>
