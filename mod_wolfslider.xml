@@ -49,25 +49,25 @@
 		<param type="spacer" />
 		<param type="spacer" default="PARAM_TITLE_WOLFSLIDER_OPTIONS" />
 		<param name="wolfslider_autoplay" type="radio" default="1" label="PARAM_LABEL_AUTOPLAY" description="PARAM_DESC_AUTOPLAY">
-			<option value="0">No</option>
-			<option value="1">Yes</option>
+			<option value="0">PARAM_VALUE_NO</option>
+			<option value="1">PARAM_VALUE_YES</option>
 		</param>
 		<param name="wolfslider_speed" type="text" default="6" label="PARAM_LABEL_SPEED" description="PARAM_DESC_SPEED" />
 		<param name="show_playback_buttons" type="radio" default="0" label="PARAM_LABEL_SHOW_PLAYBACK_BUTTONS" description="PARAM_DESC_SHOW_PLAYBACK_BUTTONS">
-			<option value="0">No</option>
-			<option value="1">Yes</option>
+			<option value="0">PARAM_VALUE_NO</option>
+			<option value="1">PARAM_VALUE_YES</option>
 		</param>
 		<param name="wolfslider_effect" type="list" default="1" label="PARAM_LABEL_EFFECT" description="PARAM_DESC_EFFECT">
-			<option value="horizontal">Horizontal Slide</option>
-			<option value="vertical">Vertical Slide</option>
-			<option value="fade">Fade</option>
+			<option value="horizontal">PARAM_VALUE_HORIZONTAL</option>
+			<option value="vertical">PARAM_VALUE_VERTICAL</option>
+			<option value="fade">PARAM_VALUE_FADE</option>
 		</param>
 
 		<param type="spacer" />
 		<param type="spacer" default="Slide Picker" />
 		<param name="use_slide_picker" type="radio" default="0" label="PARAM_LABEL_USE_SLIDE_PICKER" description="PARAM_DESC_USE_SLIDE_PICKER">
-			<option value="0">No</option>
-			<option value="1">Yes</option>
+			<option value="0">PARAM_VALUE_NO</option>
+			<option value="1">PARAM_VALUE_YES</option>
 		</param>
 		<param name="slide_picker_pos" type="text" default="slide_picker1" label="PARAM_LABEL_SLIDE_PICKER_POS" description="PARAM_DESC_SLIDE_PICKER_POS" />
 		<param name="slide_picker_selector" type="text" size="50" default="#wolfslider_handles_more span" label="PARAM_LABEL_SLIDE_PICKER_SELECTOR" description="PARAM_DESC_SLIDE_PICKER_SELECTOR" />
@@ -75,8 +75,8 @@
 		<param type="spacer" />
 		<param type="spacer" default="PARAM_TITLE_LOAD_MOOTOOLS" />
 		<param name="wolfslider_mootools" type="radio" default="1" label="PARAM_LABEL_LOAD_MOOTOOLS" description="PARAM_DESC_LOAD_MOOTOOLS">
-			<option value="0">No</option>
-			<option value="1">Yes</option>
+			<option value="0">PARAM_VALUE_NO</option>
+			<option value="1">PARAM_VALUE_YES</option>
 		</param>
 
 	</params>
