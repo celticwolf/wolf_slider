@@ -36,8 +36,8 @@
 
     <params>
 		<param type="spacer" />
-		<param type="spacer" default=PARAM_TITLE_WOLFSLIDER_LAYOUT />
-		<param name="wolfslider_wrap_width" type="text" default="600" label=PARAM_LABEL_WOLFSLIDER_WIDTH description=PARAM_DESC_WOLFSLIDER_WIDTH />
+		<param type="spacer" default="PARAM_TITLE_WOLFSLIDER_LAYOUT" />
+		<param name="wolfslider_wrap_width" type="text" default="600" label="PARAM_LABEL_WOLFSLIDER_WIDTH" description="PARAM_DESC_WOLFSLIDER_WIDTH" />
 		<param name="wolfslider_width" type="text" default="550" label="Width of Slides (in px)" description="Width of WolfSlider" />
 		<param name="wolfslider_height" type="text" default="200" label="Height (in px)" description="Height of WolfSlider" />
 		<param name="slides_z_index" type="text" default="1" label="z-index of slides" description="Z-index of the slides.  Controls whether they will appear over, under or on the same level as other elements on the page." />
