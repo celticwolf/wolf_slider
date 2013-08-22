@@ -10,8 +10,8 @@
 	<authorEmail>info@celticwolf.com</authorEmail>
 	<authorUrl>www.celticwolf.com</authorUrl>
     <description>WolfSlider Displays any module in a slider - submit bugs at www.celticwolf.com</description>
-	
-	
+
+
 	<files>
 		<filename module="mod_wolfslider">mod_wolfslider.php</filename>
         <filename>mod_wolfslider.xml</filename>
@@ -24,10 +24,10 @@
 		<filename>wolfslider/right.png</filename>
 		<filename>wolfslider/left.png</filename>
 	</files>
-	
+
     <params>
 		<param type="spacer" />
-		<param type="spacer" default="WolfSlider Layout" />
+		<param type="spacer" default=PARAM_WOLFSLIDER_LAYOUT />
 		<param name="wolfslider_wrap_width" type="text" default="600" label="WolfSlider Width (in px)" description="WolfSlider Container" />
 		<param name="wolfslider_width" type="text" default="550" label="Width of Slides (in px)" description="Width of WolfSlider" />
 		<param name="wolfslider_height" type="text" default="200" label="Height (in px)" description="Height of WolfSlider" />
@@ -35,7 +35,7 @@
 		<param name="slide_buttons_z_index" type="text" default="2" label="z-index of slide buttons" description="Z-index of the playback control buttons.  Controls whether they will appear over, under or on the same level as other elements on the page." />
 		<param type="spacer" />
 		<param type="spacer" default="Slides" />
-		<param name="wolfslider_pos" type="text" default="wolfslider1" label="Use modules in this position as slides" description="Name of position assigned to modules for slideshow" />	
+		<param name="wolfslider_pos" type="text" default="wolfslider1" label="Use modules in this position as slides" description="Name of position assigned to modules for slideshow" />
 
 		<param type="spacer" />
 		<param type="spacer" default="Slider Options" />
