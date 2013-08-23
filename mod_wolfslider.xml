@@ -71,6 +71,10 @@
 		</param>
 		<param name="slide_picker_pos" type="text" default="slide_picker1" label="PARAM_LABEL_SLIDE_PICKER_POS" description="PARAM_DESC_SLIDE_PICKER_POS" />
 		<param name="slide_picker_selector" type="text" size="50" default="#wolfslider_handles_more span" label="PARAM_LABEL_SLIDE_PICKER_SELECTOR" description="PARAM_DESC_SLIDE_PICKER_SELECTOR" />
+		<param name="wolfslider_event" type="list" default="1" label="PARAM_LABEL_EVENT" description="PARAM_DESC_EVENT">
+			<option value="click">click</option>
+			<option value="mouseover">mouseover</option>
+		</param>
 
 		<param type="spacer" />
 		<param type="spacer" default="PARAM_TITLE_LOAD_MOOTOOLS" />

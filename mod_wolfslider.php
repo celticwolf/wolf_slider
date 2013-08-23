@@ -22,6 +22,7 @@
 defined( "_JEXEC" ) or die( "Restricted access" );
 
 define('MODE_HORIZONTAL', 'horizontal');
+define('EVENT_CLICK', 'click');
 
 $wolfslider_wrap_width	= intval($params->get('wolfslider_wrap_width', '600')) . 'px';
 $wolfslider_width_nopx	= intval($params->get('wolfslider_width', '550'));
@@ -36,6 +37,7 @@ $wolfslider_speed		= intval($params->get('wolfslider_speed', '6')) * 1000;
 $use_slide_picker		= intval($params->get('use_slide_picker', '0')) === 1;
 $slide_picker_pos		= $params->get('slide_picker_pos', 'slide_picker1');
 $slide_picker_selector	= $params->get('slide_picker_selector', '#wolfslider_handles_more span');
+$wolfslider_event = $params->get('wolfslider_event', EVENT_CLICK);
 $slides_z_index			= intval($params->get('slides_z_index', '1'));
 $slide_buttons_z_index	= intval($params->get('slide_buttons_z_index', '2'));
 $show_playback_buttons	= intval($params->get('show_playback_buttons', '0')) === 1;

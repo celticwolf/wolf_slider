@@ -47,7 +47,7 @@ $doc->addScript('modules/mod_wolfslider/wolfslider/_class.noobSlide.js');
 $mooscript = "
 	window.addEvent('domready',function(){
 		var slide_picker = $$('$slide_picker_selector');
-		var nS8 = new noobSlide({
+		var ns = new noobSlide({
 			box: $('wolfsliders'),
 			items: $$('#wolfsliders > div'),
 			size: $wolfslider_size,
@@ -56,6 +56,7 @@ $mooscript = "
 			autoPlay: $wolfslider_autoplay,
 			interval: $wolfslider_speed,
 			handles: slide_picker,
+			handle_event: $wolfslider_event,
 			addButtons: {previous: $('wolfslider_prev'), play: $('wolfslider_play'), stop: $('wolfslider_stop'), next: $('wolfslider_next') },
 			onWalk: function(currentItem, currentHandle)
 			{
@@ -63,10 +64,10 @@ $mooscript = "
 				$$(currentHandle, slide_picker[this.currentIndex]).addClass('active');
 			}
 		});
-		nS8.addActionButtons('previous', $$('#wolfsliders .prev'));
-		nS8.addActionButtons('next', $$('#wolfsliders .next'));
-		//nS8.addHandleButtons(slide_picker);
-		nS8.walk(0, false, true);
+		ns.addActionButtons('previous', $$('#wolfsliders .prev'));
+		ns.addActionButtons('next', $$('#wolfsliders .next'));
+		//ns.addHandleButtons(slide_picker);
+		ns.walk(0, false, true);
 	});";
 $doc->addScriptDeclaration( $mooscript );
 
