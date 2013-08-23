@@ -56,7 +56,7 @@ $mooscript = "
 			autoPlay: $wolfslider_autoplay,
 			interval: $wolfslider_speed,
 			handles: slide_picker,
-			handle_event: $wolfslider_event,
+			handle_event: '$wolfslider_event',
 			addButtons: {previous: $('wolfslider_prev'), play: $('wolfslider_play'), stop: $('wolfslider_stop'), next: $('wolfslider_next') },
 			onWalk: function(currentItem, currentHandle)
 			{
